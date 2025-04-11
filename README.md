@@ -24,7 +24,7 @@ For now the commands will run as soon as server mod initialize.
 Locate your config in Minecraft installation location:\
 `%APPDATA%\.minecraft\config\command_on_interval.json` on Windows, default location.\
 You will get somethings like that:
-```
+```json
 {
    "0":{
       "unit-use-ticks":false,
@@ -38,7 +38,7 @@ You will get somethings like that:
 在我的世界安装位置里找到配置文件：\
 `%APPDATA%\.minecraft\config\command_on_interval.json` Windows默认位置\
 文件会包括以下内容:
-```
+```json
 {
    "0":{
       "unit-use-ticks":false,
