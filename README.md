@@ -20,6 +20,31 @@ For now the commands will run as soon as server mod initialize.
 - 周期: 命令执行周期
 - ~为什么要在Java里执行游戏命令~
 
+## Example 示例
+`command_on_interval.json`:
+```json
+{
+   "0":{
+      "unit-use-ticks":false,
+      "delay":0,
+      "interval":10,
+      "command":"say Hello, world!"
+   },
+   "1":{
+      "unit-use-ticks":true,
+      "delay":0,
+      "interval":180,
+      "command":"time set day"
+   },
+   "2":{
+      "unit-use-ticks":true,
+      "delay":5,
+      "interval":200,
+      "command":"kill @e[type=item]"
+   }
+}
+```
+
 ## Config
 Locate your config in Minecraft installation location:\
 `%APPDATA%\.minecraft\config\command_on_interval.json` on Windows, default location.\
