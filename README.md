@@ -6,6 +6,25 @@ For now the commands will run as soon as server mod initialize.
 一款可执行游戏内命令的模组，外加自定义设置。\
 目前，命令会在服务器模组初始化完成后执行。
 
+## Use
+- Users\
+Also load the require mod [Config Manager](https://modrinth.com/mod/config-manager).
+- Developer\
+In **build.gradle**:\
+`modImplementation files('cfg-mgr-1.0.0.jar')`\
+Or\
+`modImplementation "dev.felixagairu.configmanager:1.0.0"`
+
+## 使用
+- 用户\
+加载所需模组[Config Manager](https://modrinth.com/mod/config-manager).
+- 开发者\
+在**build.gradle**里:\
+`modImplementation files('cfg-mgr-1.0.0.jar')`\
+或\
+`modImplementation "dev.felixagairu.configmanager:1.0.0"`
+
+
 ## Features
 - Multi-command support
 - Ticks or seconds: Whether use game ticks or seconds (20 ticks) in timing
