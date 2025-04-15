@@ -1,3 +1,4 @@
+**[English](/README-en_us.md)** [简体中文](README-zh_cn.md)
 ## What is that
 A mod runs in-game command with customize configs.\
 For now the commands will run as soon as server mod initialize.
