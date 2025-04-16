@@ -7,10 +7,7 @@ For now the commands will run as soon as server mod initialize.
 - Users\
 Also load the require mod [Config Manager](https://modrinth.com/mod/config-manager).
 - Developer\
-In **build.gradle**:\
-`modImplementation files('cfg-mgr-1.0.0.jar')`\
-Or\
-`modImplementation "dev.felixagairu.configmanager:1.0.0"`
+See [Github](https://github.com/FelixAgairu/command-on-interval)
 
 ## Features
 - Multi-command support
