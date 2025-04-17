@@ -5,7 +5,8 @@ For now the commands will run as soon as server mod initialize.
 
 ## Use
 - Users\
-Also load the require mod [Config Manager](https://modrinth.com/mod/config-manager).
+Also load the require mod [Config Manager](https://modrinth.com/mod/config-manager)\
+Remember that Singleplayer contains an integrated server.
 - Developer\
 See [Github](https://github.com/FelixAgairu/command-on-interval)
 
