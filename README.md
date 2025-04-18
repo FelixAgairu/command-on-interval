@@ -70,4 +70,5 @@ You will get somethings like that:
 > Cycles interval for each command
 
 #### command
-> In-game command without **`/`** prefix
+> In-game command without `/` prefix:\
+> Eg. `time set day`
