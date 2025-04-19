@@ -83,3 +83,4 @@ You will get somethings like that:
 
 #### command
 > In-game command without **`/`** prefix
+> Eg. `time set day`
