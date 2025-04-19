@@ -51,6 +51,7 @@
 > `%APPDATA%\.minecraft\config\command_on_interval.json`\
 > 或\
 > `C:\Users\YOUR_USER_NAME\AppData\Roaming\.minecraft\config\command_on_interval.json`
+
 文件会包括以下内容:
 ```json
 {
