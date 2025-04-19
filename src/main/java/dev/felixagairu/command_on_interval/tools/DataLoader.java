@@ -11,6 +11,7 @@ public class DataLoader {
     private static final String defaultConfigs ="""
             {
                   \t"0":{
+                    \t\t"enabled":false,
                     \t\t"unit-use-ticks":false,
                     \t\t"delay":0,
                     \t\t"interval":10,
@@ -27,24 +28,37 @@ public class DataLoader {
     public static List<Integer> listOfInterval = new ArrayList<>();
     public static List<String> listOfCommands = new ArrayList<>();
 
-    public static void load() {
-        System.out.println("Processing cM: " + cM);
-        System.out.println("Processing configs: " + configs);
-        System.out.println("Processing keys: " + keys);
-        System.out.println("Processing keys.size(): " + keys.size());
+    public static boolean load() {
+        //System.out.println("[command-on-interval] Processing cM: " + cM);
+        //System.out.println("[command-on-interval] Processing configs: " + configs);
+        //System.out.println("[command-on-interval] Processing keys: " + keys);
+        //System.out.println("[command-on-interval] Processing keys.size(): " + keys.size());
+        try {
+            int j = 0;
+            for (int i = 0; i < keys.size(); i++) {
+                JsonObject nestedConfigs = configs.getAsJsonObject(String.valueOf(i));
+                //System.out.println("[command-on-interval] Processing nestedConfigs: " + nestedConfigs);
 
-        for (int i = 0; i < keys.size(); i++) {
-            JsonObject nestedConfigs = configs.getAsJsonObject(String.valueOf(i));
-            System.out.println("Processing nestedConfigs: " + nestedConfigs);
-
-            // Access specific properties in the nested JSON object
-            System.out.println("Processing unit-use-ticks: " + nestedConfigs.get("unit-use-ticks").getAsBoolean());
-            System.out.println("Processing i: " + i);
-            System.out.println("Processing listOfUnitUseTicks.size(): " + listOfUnitUseTicks.size());
-            listOfUnitUseTicks.add(i, nestedConfigs.get("unit-use-ticks").getAsBoolean());
-            listOfDelay.add(i, nestedConfigs.get("delay").getAsInt());
-            listOfInterval.add(i, nestedConfigs.get("interval").getAsInt());
-            listOfCommands.add(i, nestedConfigs.get("command").getAsString());
+                // Access specific properties in the nested JSON object
+                //System.out.println("[command-on-interval] Processing unit-use-ticks: " + nestedConfigs.get("unit-use-ticks").getAsBoolean());
+                //System.out.println("[command-on-interval] Processing i: " + i);
+                //System.out.println("[command-on-interval] Processing listOfUnitUseTicks.size(): " + listOfUnitUseTicks.size());
+                if (nestedConfigs.get("enabled").getAsBoolean()) {
+                    listOfUnitUseTicks.add(j, nestedConfigs.get("unit-use-ticks").getAsBoolean());
+                    listOfDelay.add(j, nestedConfigs.get("delay").getAsInt());
+                    listOfInterval.add(j, nestedConfigs.get("interval").getAsInt());
+                    listOfCommands.add(j, nestedConfigs.get("command").getAsString());
+                    j++;
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            System.err.println("[command-on-interval] Failed to read configs: " + e.getMessage());
+            return false;
         }
+    }
+
+    public static boolean reset() {
+        return cM.resetConfig();
     }
 }

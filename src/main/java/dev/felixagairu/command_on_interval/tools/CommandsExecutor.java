@@ -10,7 +10,7 @@ public class CommandsExecutor {
             ServerCommandSource source = serverInstance.getCommandSource();
 
             // Execute the command
-            System.out.println("command: "+command);
+            //System.out.println("[command-on-interval] command: "+command);
             serverInstance.getCommandManager().executeWithPrefix(source, command);
     }
 }

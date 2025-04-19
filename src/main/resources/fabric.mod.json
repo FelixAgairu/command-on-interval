@@ -3,20 +3,19 @@
 	"id": "command-on-interval",
 	"version": "${version}",
 	"name": "command-on-interval",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod runs in-game command with customize configs.",
 	"authors": [
-		"Me!"
+		"Github::FelixAgairu"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/FelixAgairu/command-on-interval"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/command-on-interval/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"dev.felixagairu.command_on_interval.Commandoninterval"
+			"dev.felixagairu.command_on_interval.CommandOnInterval"
 		]
 	},
 	"mixins": [],
@@ -26,7 +25,5 @@
 		"java": ">=21",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
-	}
+	"suggests": {}
 }

@@ -16,8 +16,8 @@ public class IntervalRegister {
             tickCounter++;
             if (tickCounter >= finalInterval) {
                 tickCounter = 0; // Reset the counter
-                System.out.println("Running task at interval!");
-                System.out.println("useTicks: "+useTicks+" finalDelay: "+finalDelay+" finalInterval: "+finalInterval+" command: "+command);
+                //System.out.println("[command-on-interval] Running task at interval!");
+                //System.out.println("[command-on-interval] useTicks: "+useTicks+" finalDelay: "+finalDelay+" finalInterval: "+finalInterval+" command: "+command);
                 CommandsExecutor commandsExecutor = new CommandsExecutor();
                 commandsExecutor.exe(server, command); // Execute your task
             }
