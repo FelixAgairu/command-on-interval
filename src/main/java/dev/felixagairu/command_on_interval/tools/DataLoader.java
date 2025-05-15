@@ -5,6 +5,7 @@ import dev.felixagairu.configmanager.ConfigManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class DataLoader {
@@ -45,13 +46,21 @@ public class DataLoader {
                 //System.out.println("[command-on-interval] Processing listOfUnitUseTicks.size(): " + listOfUnitUseTicks.size());
                 if (nestedConfigs.get("enabled").getAsBoolean()) {
                     listOfUnitUseTicks.add(j, nestedConfigs.get("unit-use-ticks").getAsBoolean());
-                    listOfDelay.add(j, nestedConfigs.get("delay").getAsInt());
-                    listOfInterval.add(j, nestedConfigs.get("interval").getAsInt());
-                    listOfCommands.add(j, nestedConfigs.get("command").getAsString());
+                    listOfDelay.add(j, Math.max(nestedConfigs.get("delay").getAsInt(), 0));
+                    listOfInterval.add(j, Math.max(nestedConfigs.get("interval").getAsInt(), 0));
+                    if (!Objects.equals(nestedConfigs.get("command").getAsString(), "") && Objects.nonNull(nestedConfigs.get("command").getAsString())) {
+                        listOfCommands.add(j, nestedConfigs.get("command").getAsString());
+                    } else {
+                        listOfCommands.add(j, "tellraw @a[tag=op] {\"text\":\"[command-on-interval] The No." + i + " command has empty content\"}");
+                    }
                     j++;
                 }
             }
             return true;
+        } catch (UnsupportedOperationException | IllegalStateException e) {
+
+        } catch (NumberFormatException e) {
+
         } catch (Exception e) {
             System.err.println("[command-on-interval] Failed to read configs: " + e.getMessage());
             return false;
