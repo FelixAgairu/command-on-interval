@@ -39,7 +39,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// The ConfigManager
-	modImplementation "maven.modrinth:config-manager:${project.configmanager_version}"
+	modImplementation "maven.modrinth:config-manager:${project.config_manager_version}"
 }
 
 processResources {

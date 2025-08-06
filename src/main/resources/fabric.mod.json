@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "command-on-interval",
 	"version": "${version}",
-	"name": "command-on-interval",
+	"name": "Command on Interval",
 	"description": "A mod runs in-game command with customize configs.",
 	"authors": [
 		"Github::FelixAgairu"

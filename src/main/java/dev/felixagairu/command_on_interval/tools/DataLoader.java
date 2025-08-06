@@ -57,14 +57,13 @@ public class DataLoader {
                 }
             }
             return true;
-        } catch (UnsupportedOperationException | IllegalStateException e) {
-
-        } catch (NumberFormatException e) {
+        } catch (UnsupportedOperationException | IllegalStateException | NumberFormatException ignored) {
 
         } catch (Exception e) {
             System.err.println("[command-on-interval] Failed to read configs: " + e.getMessage());
             return false;
         }
+        return false;
     }
 
     public static boolean reset() {
