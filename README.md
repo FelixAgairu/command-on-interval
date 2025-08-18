@@ -70,7 +70,7 @@ You will get somethings like that:
 > True enable this entry of setting, vice versa
 
 #### unit-use-ticks
-> True use ticks, False ues seconds
+> For delay or interval, `true` use ticks, `false` ues seconds
 
 #### delay
 > Delay before each command runs
