@@ -40,7 +40,7 @@ public class CommandOnInterval implements ModInitializer {
                 }
             }
         } catch (Exception e) {
-            LOGGER.error("Failed to initialize configs: \n {}", e.getMessage());
+            System.err.println("[command-on-interval] Failed to initialize configs: " + e.getMessage());
             DataLoader.reset();
         }
     }
